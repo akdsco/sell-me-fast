@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "sell-me-fast",
+    "name": "Sell me Fast",
     "slug": "sell-me-fast",
     "platforms": [
       "ios",
@@ -23,6 +23,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Quickly sell things you no longer need",
+    "githubUrl": "https://github.com/akdsco/sell-me-fast"
   }
 }
