@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Image, Platform, StatusBar, SafeAreaView, ImageBackground } from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import { useDeviceOrientation } from "@react-native-community/hooks";
-import WelcomeScreen from "./components/WelcomeScreen";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
 
 export default function App() {
   const { landscape } = useDeviceOrientation();
