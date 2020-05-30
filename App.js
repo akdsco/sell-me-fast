@@ -1,43 +1,25 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Image, Platform, StatusBar, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, Platform, StatusBar, SafeAreaView, ImageBackground } from 'react-native';
 import { useDeviceOrientation } from "@react-native-community/hooks";
+import WelcomeScreen from "./components/WelcomeScreen";
 
 export default function App() {
   const { landscape } = useDeviceOrientation();
 
-  const [number, setNumber] = useState(0);
-
-  const handlePress = () => {
-    setNumber(number + 1);
-    alert('Added 1 to the counter.')
-  };
-
-  const handleReset = () => {
-    setNumber(0);
-  };
-
   return (
-    <SafeAreaView style={styles.container}>
-      <View
-        style={{
-          height: landscape ? '100%' : '30%',
-          width: '100%',
-          backgroundColor: 'dodgerblue'
-        }}
-      >
-
-      </View>
-    </SafeAreaView>
-  );
+      <WelcomeScreen />
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+    flex: 1,
+    flexDirection: 'column'
   },
   image: {
-    height: 200,
-    width: 200
+    flex: 1,
+    resizeMode: 'cover',
   },
   counter: {
     paddingTop: 20,
