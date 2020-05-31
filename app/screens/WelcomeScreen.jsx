@@ -2,16 +2,19 @@ import { StyleSheet, View, ImageBackground, Image, Text } from 'react-native';
 import backgroundImg from '../assets/background.jpg';
 import logo from '../assets/logo-red.png';
 import React from "react";
+import ButtonWide from "../components/ButtonWide";
+
+import colors from '../config/colors';
 
 export default function WelcomeScreen() {
   return(
-      <ImageBackground style={styles.background} source={backgroundImg}>
+      <ImageBackground style={styles.background} blurRadius={1} source={backgroundImg}>
         <View style={styles.logoContainer}>
           <Image source={logo} style={styles.logoImg}/>
           <Text style={styles.logoText}>Sell What You Don't Need</Text>
         </View>
-        <View style={styles.loginBtn} />
-        <View style={styles.registerBtn} />
+        <ButtonWide style={styles.loginBtn} text='Login' bgColor={colors.primary}/>
+        <ButtonWide style={styles.registerBtn} text='Register' bgColor={colors.secondary}/>
       </ImageBackground>
   )
 }
@@ -33,16 +36,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   logoText: {
-    top: 4
+    top: 15,
+    fontSize: 28,
+    fontWeight: '700',
   },
   loginBtn: {
-    height: 70,
-    width: '100%',
-    backgroundColor: '#fc5c65',
   },
   registerBtn: {
-    height: 70,
-    width: '100%',
-    backgroundColor: '#4ecdc4',
   }
 });
